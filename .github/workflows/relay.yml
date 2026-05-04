@@ -1,0 +1,148 @@
+name: Relay relatório → Vercel + WhatsApp
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'relatorios/*.json'
+  workflow_dispatch:
+    inputs:
+      file:
+        description: 'Caminho do arquivo (ex: relatorios/2026-05-03.json)'
+        required: true
+
+jobs:
+  relay:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Identificar arquivos modificados
+        id: files
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "files=${{ github.event.inputs.file }}" >> $GITHUB_OUTPUT
+          else
+            CHANGED=$(git diff --name-only HEAD~1 HEAD | grep '^relatorios/.*\.json$' | tr '\n' ' ' || true)
+            echo "files=$CHANGED" >> $GITHUB_OUTPUT
+          fi
+          echo "Arquivos a processar: $CHANGED"
+
+      - name: Publicar no site Vercel + enviar WhatsApp
+        env:
+          RELAY_SECRET: ${{ secrets.RELAY_SECRET }}
+          INGEST_URL: ${{ secrets.INGEST_URL }}
+          WHATSAPP_RELAY_URL: ${{ secrets.WHATSAPP_RELAY_URL }}
+          WHATSAPP_GROUP_JID: ${{ secrets.WHATSAPP_GROUP_JID }}
+          REPORT_BASE_URL: https://relatorios-vsl.vercel.app/r
+        run: |
+          set -e
+          for FILE in ${{ steps.files.outputs.files }}; do
+            echo ""
+            echo "=========================================="
+            echo "Processando: $FILE"
+            echo "=========================================="
+
+            if [ ! -f "$FILE" ]; then
+              echo "ERRO: arquivo $FILE não existe, pulando"
+              continue
+            fi
+
+            # 1. POST pro Vercel /api/ingest
+            echo ""
+            echo "[1/2] Publicando no site Vercel..."
+            INGEST_RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "$INGEST_URL" \
+              -H "Content-Type: application/json" \
+              -H "x-relay-token: $RELAY_SECRET" \
+              -d @"$FILE")
+
+            INGEST_BODY=$(echo "$INGEST_RESPONSE" | head -n -1)
+            INGEST_CODE=$(echo "$INGEST_RESPONSE" | tail -n 1)
+            echo "Status: $INGEST_CODE"
+            echo "Resposta: $INGEST_BODY"
+
+            if [ "$INGEST_CODE" != "200" ]; then
+              echo "ERRO: ingest falhou com status $INGEST_CODE"
+              exit 1
+            fi
+
+            # Extrai data e KPIs do JSON
+            DATE=$(python3 -c "import json; d=json.load(open('$FILE')); print(d['date'])")
+            DATE_BR=$(python3 -c "y,m,d='$DATE'.split('-'); print(f'{d}/{m}/{y}')")
+            REPORT_URL="$REPORT_BASE_URL/$DATE"
+
+            ROAS=$(python3 -c "import json; d=json.load(open('$FILE')); s=d.get('summary',{}); print(f\"{s.get('roas',0):.2f}\".replace('.',','))")
+            REVENUE=$(python3 -c "import json; d=json.load(open('$FILE')); s=d.get('summary',{}); print(f\"R\$ {s.get('revenue',0):,.2f}\".replace(',','X').replace('.',',').replace('X','.'))")
+            SPEND=$(python3 -c "import json; d=json.load(open('$FILE')); s=d.get('summary',{}); print(f\"R\$ {s.get('spend',0):,.2f}\".replace(',','X').replace('.',',').replace('X','.'))")
+            PROFIT=$(python3 -c "import json; d=json.load(open('$FILE')); s=d.get('summary',{}); print(f\"R\$ {s.get('profit',0):,.2f}\".replace(',','X').replace('.',',').replace('X','.'))")
+            VENDAS=$(python3 -c "import json; d=json.load(open('$FILE')); s=d.get('summary',{}); print(s.get('vendas','—'))")
+            DESTAQUE=$(python3 -c "import json; d=json.load(open('$FILE')); print(d.get('destaque','—'))")
+            ATENCAO=$(python3 -c "import json; d=json.load(open('$FILE')); print(d.get('atencao','—'))")
+            ACAO=$(python3 -c "import json; d=json.load(open('$FILE')); print(d.get('acao_prioritaria','—'))")
+            ALERTA=$(python3 -c "import json; d=json.load(open('$FILE')); print(d.get('alerta_critico') or '')")
+
+            HORA=$(TZ=America/Sao_Paulo date "+%H:%M")
+
+            # Monta mensagem WhatsApp
+            PREFIX=""
+            if [ -n "$ALERTA" ]; then
+              PREFIX="🚨 *ALERTA CRÍTICO:* $ALERTA"$'\n\n'
+            fi
+
+            MESSAGE="${PREFIX}📊 *Relatório VSL — $DATE_BR*
+
+💰 *Faturamento líq:* $REVENUE
+💸 *Investimento:* $SPEND
+📈 *ROAS:* ${ROAS}×
+✅ *Lucro:* $PROFIT
+🛒 *Vendas:* $VENDAS aprovadas
+
+🏆 *Destaque do dia:*
+$DESTAQUE
+
+⚠️ *Atenção:*
+$ATENCAO
+
+🎯 *Ação prioritária HOJE:*
+$ACAO
+
+📑 Relatório completo:
+$REPORT_URL
+
+_Gerado às $HORA_"
+
+            # 2. POST pro WhatsApp relay
+            echo ""
+            echo "[2/2] Enviando WhatsApp..."
+
+            PAYLOAD=$(python3 -c "
+import json, sys, os
+msg = os.environ['MSG']
+print(json.dumps({'number': os.environ['WHATSAPP_GROUP_JID'], 'text': msg}))
+" )
+            export MSG="$MESSAGE"
+            PAYLOAD=$(python3 -c "
+import json, os
+print(json.dumps({'number': os.environ['WHATSAPP_GROUP_JID'], 'text': os.environ['MSG']}))
+")
+
+            WA_RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "$WHATSAPP_RELAY_URL" \
+              -H "Content-Type: application/json" \
+              -H "x-relay-token: $RELAY_SECRET" \
+              -d "$PAYLOAD")
+
+            WA_BODY=$(echo "$WA_RESPONSE" | head -n -1)
+            WA_CODE=$(echo "$WA_RESPONSE" | tail -n 1)
+            echo "Status WhatsApp: $WA_CODE"
+            echo "Resposta: $WA_BODY"
+
+            if [ "$WA_CODE" != "200" ]; then
+              echo "AVISO: WhatsApp falhou com status $WA_CODE (mas relatório foi publicado)"
+            fi
+
+            echo ""
+            echo "✅ Concluído: $REPORT_URL"
+          done
