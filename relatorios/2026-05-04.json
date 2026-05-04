@@ -1,0 +1,19 @@
+{
+  "date": "2026-05-04",
+  "summary": {
+    "roas": 2.34,
+    "revenue": 4567.89,
+    "spend": 1953.12,
+    "profit": 2614.77,
+    "vendas": 17,
+    "cpa": 114.89,
+    "ctr": 1.45,
+    "conv_checkout": 18.5,
+    "conv_pagina_venda": 2.1
+  },
+  "destaque": "TESTE — ADS200 ROAS 4,1× (validação do GitHub Actions relay)",
+  "atencao": "TESTE de pipeline GitHub → Vercel → WhatsApp",
+  "acao_prioritaria": "Confirmar que mensagem chegou no grupo e card no site",
+  "alerta_critico": null,
+  "markdown": "# Relatório TESTE — 04/05/2026 (GitHub Actions relay)\n\nEste é um teste do pipeline:\n\n```\nCloud Routine → GitHub commit → Action → Vercel ingest + WhatsApp\n```\n\n## Validação do pipeline\n\n| Etapa | Status |\n|---|---|\n| GitHub recebeu commit | ✅ |\n| Action disparou | ✅ |\n| POST /api/ingest no Vercel | ✅ |\n| POST /api/relay WhatsApp | ✅ |\n| Mensagem entregue no grupo | ✅ se você está lendo isso |\n\n## Próximo passo\n\nSe esse teste deu certo, a Cloud Routine de amanhã (05/05 11h) vai usar essa mesma rota e tudo funciona end-to-end."
+}
