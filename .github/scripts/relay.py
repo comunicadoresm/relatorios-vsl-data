@@ -103,7 +103,7 @@ def process_file(filepath: str) -> bool:
     print(f"  Status: {code}")
     print(f"  Resposta: {json.dumps(body)[:300]}")
 
-    ingest_ok = code == 200
+    ingest_ok = 200 <= code < 300
 
     # 2. Enviar WhatsApp (independente do ingest)
     print("\n[2/2] POST /api/relay WhatsApp...")
@@ -116,7 +116,7 @@ def process_file(filepath: str) -> bool:
     print(f"  Status: {code}")
     print(f"  Resposta: {json.dumps(body)[:300]}")
 
-    wa_ok = code == 200
+    wa_ok = 200 <= code < 300
 
     print(f"\n  Publicação: {'✓' if ingest_ok else '✗'} | WhatsApp: {'✓' if wa_ok else '✗'}")
     print(f"  URL: {report_url}")
