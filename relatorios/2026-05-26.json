@@ -1,0 +1,88 @@
+{
+  "date": "2026-05-26",
+  "summary": {
+    "roas": 1.93,
+    "roas_bruto": 1.98,
+    "revenue": 4251.78,
+    "revenue_bruto": 4365.28,
+    "spend": 2199.67,
+    "profit": 2052.11,
+    "vendas": 15,
+    "vendas_pendentes": 1,
+    "vendas_recusadas": 4,
+    "vendas_reembolsadas": 0,
+    "cpa": 146.64,
+    "ticket_medio": 283.45,
+    "ctr": 1.37,
+    "impressions": 56748,
+    "clicks": 779,
+    "lpv": 735,
+    "ic": 73,
+    "pct_lpv_to_checkout": 9.93,
+    "conv_checkout": 20.55,
+    "conv_pagina_venda": 2.04
+  },
+  "destaque": "F42 RM (Escala) entregou ROAS 2,17× já no Dia 1 com 5 vendas | F38 Reserva ROAS 3,51×",
+  "atencao": "F36 RM com 14 dias rodando em ROAS 1,00 — capital queimado ~R$ 2.500. Framework de morte no D5 não foi cumprido.",
+  "acao_prioritaria": "MATAR F36 RM imediatamente + escalar F42 RM (+30%, R$ 600 → R$ 780) + promover F37 RM para campanha de escala dedicada",
+  "alerta_critico": "F41 Reserva (Escala) está no Dia 4 com ROAS 1,06× — se hoje (D5) não passar 2×, matar a campanha inteira conforme framework",
+  "pontuacao_time": 6.5,
+  "capital_queimado_estimado": 2500.0,
+  "tendencia_7d_roas": 1.7,
+  "campanhas_ativas": {
+    "reserva": [
+      {
+        "nome": "F38 Teste (19/05)",
+        "spend": 343.84,
+        "roas": 3.51,
+        "vendas": 4,
+        "decisao": "ESCALAR +30%"
+      },
+      {
+        "nome": "F41 Escala (23/05)",
+        "spend": 524.83,
+        "roas": 1.06,
+        "vendas": 2,
+        "decisao": "OBSERVAR D5 — matar se ROAS<2"
+      },
+      {
+        "nome": "F43 Teste (criada 26/05)",
+        "spend": 0,
+        "roas": null,
+        "vendas": 0,
+        "decisao": "Monitorar 48h"
+      },
+      {
+        "nome": "F44 Teste (criada 26/05)",
+        "spend": 0,
+        "roas": null,
+        "vendas": 0,
+        "decisao": "Monitorar 48h"
+      }
+    ],
+    "rm": [
+      {
+        "nome": "F42 Escala (26/05)",
+        "spend": 641.48,
+        "roas": 2.17,
+        "vendas": 5,
+        "decisao": "ESCALAR +30% — CAMPEÃ"
+      },
+      {
+        "nome": "F37 Teste (17/05)",
+        "spend": 410.11,
+        "roas": 2.27,
+        "vendas": 3,
+        "decisao": "PROMOVER para escala"
+      },
+      {
+        "nome": "F36 Teste (13/05)",
+        "spend": 279.41,
+        "roas": 1.0,
+        "vendas": 1,
+        "decisao": "MATAR — 14 dias preso em ROAS 1"
+      }
+    ]
+  },
+  "markdown": "# Relatório Diário VSL — 26/05/2026\n**Período:** 26/05/2026 00:00 a 23:59 (-3)\n**Contas:** GB | Lançamentos - Reserva + GB | RM\n**Produto:** Conteúdo Magnético que Vende | CMV (tícket ~R$ 271)\n\n---\n\n## 1. Resumo Executivo\n\n- 💰 **Faturamento líquido R$ 4.251,78** com investimento de **R$ 2.199,67** → **ROAS 1,93×** | lucro **R$ 2.052,11**.\n- 🏆 **F42 RM (Escala) é a campanha do dia:** ROAS **2,17×**, 5 vendas aprovadas, CTR **1,96%**, hook **26%** — entregou já no Dia 1.\n- 🟢 **F38 Reserva (Teste) explodiu:** ROAS **3,51×** com R$ 343,84 de gasto. Está madura (8 dias) e ainda escalando.\n- 🚨 **F36 RM mata o caixa:** 14 dias rodando com ROAS empacado em 1,0× — deveria ter morrido no Dia 5.\n- ⚠️ **F41 Reserva (Escala) no Dia 4 com ROAS 1,06×** — pelo framework, se hoje (D5) não bater ROAS 2 → MATAR.\n\n---\n\n## 2. Visão Consolidada (Reserva + RM)\n\n| Métrica | Valor |\n|---|---|\n| Investimento | R$ 2.199,67 |\n| Faturamento líquido | R$ 4.251,78 |\n| Faturamento bruto | R$ 4.365,28 |\n| Lucro | R$ 2.052,11 |\n| ROAS líquido | **1,93×** |\n| ROAS bruto | 1,98× |\n| Vendas aprovadas | 15 |\n| Vendas pendentes | 1 |\n| Vendas recusadas | 4 |\n| Vendas reembolsadas | 0 |\n| Tícket médio | R$ 283,45 |\n| CPA | R$ 146,64 |\n| Impressões | 56.748 |\n| Cliques (link) | 779 |\n| CTR | 1,37% |\n| Landing Page Views | 735 |\n| Initiate Checkout | 73 |\n| % LPV → Checkout | 9,93% |\n| Conv. Checkout | 20,55% |\n| Conv. Página → Venda | 2,04% |\n\n---\n\n## 3. GB | Lançamentos - Reserva\n\n### 3.1 Métricas da conta (ontem)\n\n| Métrica | Valor |\n|---|---|\n| Investimento | R$ 868,67 |\n| Faturamento líquido | R$ 1.719,04 |\n| Faturamento bruto | R$ 1.764,93 |\n| Lucro | R$ 850,37 |\n| ROAS líquido | **1,98×** |\n| ROAS bruto | 2,03× |\n| Vendas aprov / pend / rec / reemb | 6 / 1 / 1 / 0 |\n| Tícket médio | R$ 286,51 |\n| CPA | R$ 144,78 |\n| Impressões | 24.165 |\n| CTR | 1,30% |\n| LPV | 303 |\n| IC | 28 |\n| % LPV → Checkout | 9,24% |\n| Conv. Checkout | 21,43% |\n| Conv. Página → Venda | 1,98% |\n\n### 3.2 Todas as campanhas\n\n| Nome | Tipo | Idade | Spend | ROAS líq. | Vendas | Status | Veredito |\n|---|---|---|---|---|---|---|---|\n| VSL F38 Frio Teste-Ads (19/05) | Teste | 8d | R$ 343,84 | **3,51×** | 4 aprov | ACTIVE | 🚀 ESCALAR +30% |\n| VSL F41 Frio Escala (23/05) | Escala | 4d | R$ 524,83 | 1,06× | 2 aprov / 1 pend | ACTIVE | 🟡 Dia 4 — observar D5, se ROAS<2 → MATAR |\n| VSL F43 Frio Teste-Ads (criada 26/05) | Teste | 0d | R$ 0,00 | — | 0 | ACTIVE | ⏳ Acabou de subir — monitorar 48h |\n| VSL F44 Frio Teste-Ads (criada 26/05) | Teste | 0d | R$ 0,00 | — | 0 | ACTIVE | ⏳ Acabou de subir — monitorar 48h |\n| VSL F39 (21/05) | Teste | 5d | R$ 0,00 | — | 0 | PAUSED | ✅ Já morta |\n| VSL F40 (21/05) | Teste | 5d | R$ 0,00 | — | 0 | PAUSED | ✅ Já morta |\n\n---\n\n## 4. GB | RM\n\n### 4.1 Métricas da conta (ontem)\n\n| Métrica | Valor |\n|---|---|\n| Investimento | R$ 1.331,00 |\n| Faturamento líquido | R$ 2.532,74 |\n| Faturamento bruto | R$ 2.600,35 |\n| Lucro | R$ 1.201,74 |\n| ROAS líquido | **1,90×** |\n| ROAS bruto | 1,95× |\n| Vendas aprov / pend / rec / reemb | 9 / 0 / 3 / 0 |\n| Tícket médio | R$ 281,42 |\n| CPA | R$ 147,89 |\n| Impressões | 32.583 |\n| CTR | 1,42% |\n| LPV | 432 |\n| IC | 45 |\n| % LPV → Checkout | 10,42% |\n| Conv. Checkout | 20,00% |\n| Conv. Página → Venda | 2,08% |\n\n### 4.2 Todas as campanhas\n\n| Nome | Tipo | Idade | Spend | ROAS líq. | Vendas | Status | Veredito |\n|---|---|---|---|---|---|---|---|\n| VSL F42 Frio Escala (26/05) | Escala | 1d | R$ 641,48 | **2,17×** | 5 aprov | ACTIVE | 🚀 ESCALAR +30% — CAMPEÃ |\n| VSL F37 Frio Teste-Ads (17/05) | Teste | 10d | R$ 410,11 | **2,27×** | 3 aprov | ACTIVE | 🏆 PROMOVER para escala dedicada |\n| VSL F36 Frio Teste-Ads (13/05) | Teste | 14d | R$ 279,41 | 1,00× | 1 aprov | ACTIVE | 🔴 MATAR — 14 dias preso em ROAS 1 |\n| VSL F35 (13/05) | Teste | 14d | R$ 0,00 | — | 0 | PAUSED | ✅ Já morta |\n| VSL F32 (08/05) | Teste | 19d | R$ 0,00 | — | 0 | PAUSED | ✅ Já morta |\n\n---\n\n## 5. Análise Ad-by-Ad das Campanhas ATIVAS\n\n### 5.1 F38 Reserva — Teste-Ads (8 dias) — ROAS 3,51×\n\n| Ad | Spend | Revenue | ROAS | Vendas | CPA | CTR | Conv. Ck | Hook | Decisão |\n|---|---|---|---|---|---|---|---|---|---|\n| ADS149 \"Cara esses vídeos não passam de 6.000 views\" | R$ 343,84 | R$ 813,71 | 2,43× | 3 aprov | R$ 114,61 | 1,10% | 25,0% | 14,0% | 🚀 **Manter ativo + duplicar para campanha de escala.** Único ad ativo, gerando 3 vendas com CPA baixo. Hook moderado mas converte. |\n\n### 5.2 F41 Reserva — Escala (4 dias) — ROAS 1,06×\n\n| Ad | Spend | Revenue | ROAS | Vendas | CPA | CTR | Conv. Ck | Hook | Decisão |\n|---|---|---|---|---|---|---|---|---|---|\n| ADS147 \"Cara esses vídeos não passam de 6.000\" | R$ 470,99 | R$ 542,46 | 1,18× | 2 aprov / 1 pend / 1 rec | R$ 235,50 | 1,59% | 21,4% | 20,7% | 🟡 **Reduzir budget 30%, observar 24h.** Concentrando 90% do gasto da campanha sem ROAS adequado. |\n| ADS141 \"Teste dos 3 Segundos — Gancho 03\" | R$ 29,70 | R$ 0,00 | 0,00 | 0 | — | 0,78% | 0,0% | 22,4% | 🔴 **MATAR.** CTR 0,78% (baixíssimo). 2 IC sem nenhuma venda. |\n| ADS125 \"Teste dos 3 Segundos — Gancho 03\" | R$ 24,14 | R$ 0,00 | 0,00 | 0 | — | 0,54% | 0,0% | 22,6% | 🔴 **MATAR.** CTR 0,54% (zero tração). |\n\n### 5.3 F42 RM — Escala (1 dia) — ROAS 2,17× 🏆\n\n| Ad | Spend | Revenue | ROAS | Vendas | CPA | CTR | Conv. Ck | Hook | Decisão |\n|---|---|---|---|---|---|---|---|---|---|\n| ADS147 \"Cara esses vídeos não passam de 6.000\" | R$ 219,57 | R$ 542,46 | 2,54× | 2 aprov | R$ 109,79 | 1,91% | 25,0% | 24,4% | 🚀 **ESCALAR.** Vencedor consolidado. |\n| ADS125 \"Teste 3 Seg — Gancho 03 V2\" | R$ 113,91 | R$ 271,23 | 2,44× | 1 aprov / 2 rec | R$ 113,91 | 1,78% | 25,0% | 29,2% | 🟢 Manter — performa bem, mas 2 recusadas pedem atenção no checkout. |\n| ADS147 (variação 02) | R$ 99,71 | R$ 271,24 | 2,79× | 1 aprov | R$ 99,71 | 2,18% | 25,0% | 23,8% | 🟢 Manter — bom CPA, alto CTR. |\n| ADS147 (variação 03) | R$ 90,59 | R$ 0,00 | 0,00 | 0 | — | 1,76% | 0,0% | 23,7% | 🟡 Dar 24h — métricas de topo ok. |\n| ADS141 (variação Teste 3 Seg) | R$ 36,20 | R$ 0,00 | 0,00 | 0 | — | 1,95% | 0,0% | 28,4% | 🟡 Dar 24h. |\n| ADS141 (variação Teste 3 Seg) | R$ 33,48 | R$ 271,24 | **8,32×** | 1 aprov | R$ 33,48 | 2,88% | 100,0% | 28,7% | 🚀 **DUPLICAR** — ROAS 8,32× e Conv.Ck 100%. Validar com mais budget. |\n| ADS125 (variação) | R$ 22,82 | R$ 0,00 | 0,00 | 0 | — | 1,34% | 0,0% | 26,9% | 🟡 Dar 24h. |\n| ADS141 (variação) | R$ 13,53 | R$ 0,00 | 0,00 | 0 | — | 2,13% | 0,0% | 31,4% | 🟡 Dar 24h. |\n| ADS125 (variação) | R$ 11,67 | R$ 0,00 | 0,00 | 0 / 1 rec | — | 3,08% | 0,0% | 34,4% | 🟡 Dar 24h. |\n\n### 5.4 F37 RM — Teste-Ads (10 dias) — ROAS 2,27×\n\n| Ad | Spend | Revenue | ROAS | Vendas | CPA | CTR | Conv. Ck | Hook | Decisão |\n|---|---|---|---|---|---|---|---|---|---|\n| ADS147 \"Cara esses vídeos não passam de 6.000\" | R$ 410,11 | R$ 542,46 | 1,36× | 2 aprov | R$ 205,06 | 1,06% | 20,0% | 18,3% | 🟡 **Diferente do ROAS da campanha** (que é 2,27×). Spend está concentrado neste ad — segregar criativo vencedor de F37 e levar pra escala. |\n\n> Observação: a campanha mostra ROAS 2,27× porque inclui receita de outros ads em períodos anteriores. O ad ativo ontem (ADS147) está retornando 1,36×. Atenção.\n\n### 5.5 F36 RM — Teste-Ads (14 dias) — ROAS 1,00× 🔴\n\n| Ad | Spend | Revenue | ROAS | Vendas | CPA | CTR | Conv. Ck | Hook | Decisão |\n|---|---|---|---|---|---|---|---|---|---|\n| ADS141 \"Teste dos 3 Seg — Gancho 03 V2\" | R$ 279,41 | R$ 271,24 | 1,00× | 1 aprov | R$ 279,41 | 1,32% | 6,7% | 22,3% | 🔴 **MATAR.** 14 dias rodando, 1 venda. Conv.Checkout 6,7% (péssimo). CPA = tícket. |\n\n---\n\n## 6. Plano de Ação para HOJE (27/05/2026)\n\n### 🔴 MATAR AGORA\n- **F36 RM (campanha inteira)** — 14 dias com ROAS 1,00, Conv.Ck 6,7%. Capital indo embora.\n- **F41 Reserva — ad ADS141 (R$ 29,70 ontem, CTR 0,78%, 0 venda).**\n- **F41 Reserva — ad ADS125 (R$ 24,14 ontem, CTR 0,54%, 0 venda).**\n\n### 🚀 ESCALAR +30%\n- **F42 RM (Escala):** daily budget R$ 600 → **R$ 780**. ROAS 2,17× no Dia 1 + hook 26% + CTR 1,96%.\n- **F38 Reserva (Teste):** ROAS 3,51× ontem. Subir budget +30% ou criar campanha CBO de escala dedicada com ADS149.\n\n### 🏆 PROMOVER PARA CAMPANHA DE ESCALA\n- **F37 RM:** ROAS 7d = 2,43×, ROAS ontem 2,27×, 10 dias provando. Criar campanha de escala com ABO/CBO usando ADS147 (vencedor consistente da família).\n- **F42 RM Ad ADS141 (R$ 33,48, ROAS 8,32×, Conv.Ck 100%):** duplicar isoladamente em adset/campanha de escala — provou em 1 dia.\n\n### 🟡 OBSERVAR / DECIDIR EM 24-48H\n- **F41 Reserva ad ADS147 (R$ 470,99 ontem, ROAS 1,18×):** reduzir budget 30%. Se até amanhã não passar ROAS 1,5 → matar.\n- **F42 RM:** ads sem venda mas com CTR>1,7% e hook>23% (ADS147 v3, ADS141, ADS125 variações) — dar mais 24h.\n\n### ⏳ DEIXAR RODAR\n- **F43 e F44 Reserva (Teste-Ads):** criadas ontem à noite (18:49 e 19:02), ainda sem gasto. Acompanhar primeiras 48h.\n\n---\n\n## 7. Auditoria do Time\n\n### 🟢 O que foi feito CERTO\n- ✅ Lançou F42 RM (Escala) em 25/05 — entregou ROAS 2,17× já no Dia 1. **Decisão excelente.**\n- ✅ Pausou em tempo F32, F33, F34, F35, F39, F40 quando não performaram.\n- ✅ Manteve F38 Reserva (ROAS 3,5× ontem) viva e produtiva.\n\n### 🔴 O que NÃO foi feito mas deveria\n- ❌ **F36 RM ainda rodando há 14 dias** com ROAS empacado em 1,0–1,57×. Pelo framework deveria ter sido morta no Dia 5. Capital queimado estimado: **~R$ 2.500** (9 dias × ~R$ 280/dia médios sem ROAS adequado, considerando ROAS líquido < 2 e revenue insuficiente).\n- ❌ **F38 Reserva (ROAS 3,5× ontem, 2,03× em 7 dias) ainda não foi promovida** para campanha de escala dedicada. Tem 8 dias e validou — está deixando dinheiro na mesa por falta de braço quente.\n- ❌ **F37 RM (ROAS 2,43× em 7 dias) ainda no formato Teste-Ads** após 10 dias. Já provou; deveria estar em campanha de escala com budget escalonado.\n- ❌ **F41 Reserva (Escala) lançada com 3 ads, sendo 2 deles com CTR < 1%** — falha de seleção de criativos antes de levar para escala. Os 2 ads fracos deveriam ter sido cortados no Dia 2.\n\n### 💰 Capital queimado por demora: ~R$ 2.500 (estimativa F36 + ads zumbis F41)\n\n### 📊 **Pontuação do time: 6,5/10**\nAcertou no lançamento da F42 (escala) e na manutenção da F38, mas pecou na **execução do framework**: campanhas com ROAS = 1 sustentado deveriam morrer no Dia 5, e vencedoras (F38, F37) deveriam estar em escala dedicada já.\n\n---\n\n## 8. Padrões Críticos Detectados\n\n### 🟢 Ângulos vencedores\n- **\"Cara esses vídeos aqui não passam de 6.000 views\" (ADS147 / ADS149):** presente em 3 das 5 campanhas ativas, gerando entre 8 e 13 das vendas do mês. Hook moderado (14–24%) mas Conv.Ck 20–25%. **É o cavalo do mês.**\n- Variação ADS141 V2 da família \"Teste dos 3 Segundos — Gancho 03\" entregou ontem ROAS 8,32× em micro-amostra na F42 — vale duplicar e isolar.\n\n### 🟡 Saturando / pedem renovação\n- **Família \"Teste dos 3 Segundos — Gancho 03\" (ADS125, ADS141):** hook altíssimo (28–34%) mas Conv.Ck normalmente 0–6,7%. Vídeo retém atenção mas **não converte em compra** — gancho desalinhado com a oferta.\n\n### 🚦 Gargalo de funil\n- LPV → IC: **9,93%** (saudável).\n- IC → Venda (Conv.Ck): **20,55%** (ok, mas com espaço — checkout/objeções).\n- LPV → Venda: **2,04%** — abaixo de 2,5% indica que VSL/checkout estão segurando vendas.\n- **CPA R$ 146,64 sobre tícket R$ 283** = margem operacional ~48%; precisa que ROAS bruto fique ≥ 2,1× consistente para escalar com tranquilidade.\n\n### 📈 Tendência 7 dias (20–26/05)\n- **Reserva 7d:** Spend R$ 7.263,35 → Revenue líq R$ 10.941,16 → ROAS **1,51×**.\n- **RM 7d:** Spend R$ 7.154,29 → Revenue líq R$ 13.504,32 → ROAS **1,89×**.\n- **Consolidado 7d:** ROAS **1,70×**. Ontem foi **1,93×** — **dia acima da média**, puxado por F42 (Escala) e F38.\n\n---\n\n## 9. Próximos passos sugeridos\n\n1. **Hoje cedo:** matar F36 RM inteira + matar os 2 ads zumbis da F41 (ADS141 e ADS125 com CTR < 1%). Estanca sangria.\n2. **Hoje cedo:** subir budget da F42 RM de R$ 600 → R$ 780 (escala +30%, ROAS 2,17× no Dia 1 manda).\n3. **Hoje:** subir budget da F38 Reserva +30% **ou** lançar campanha CBO de Escala dedicada com ADS149 (ROAS 3,51× ontem, 2,03× em 7d).\n4. **Até amanhã:** promover F37 RM para campanha de Escala isolada com ADS147 (10 dias, ROAS 7d = 2,43×).\n5. **Hoje 18h:** revisar F41 Reserva — se ROAS do dia não passar 2× (D5), MATAR campanha inteira sem dó; e cumprir o framework no próximo lote.\n\n---\n\n*Relatório gerado em 27/05/2026 — analista: Sênior de Tráfego Pago | Meta Ads | UTMify*\n"
+}
